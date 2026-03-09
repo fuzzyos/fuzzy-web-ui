@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		"target": "ES2022",
+		"module": "ES2022",
+		"lib": ["ES2022", "DOM", "DOM.Iterable"],
+		"moduleResolution": "bundler",
+		"paths": {
+			"*": ["./*"],
+			"@fuzzyos/fuzzy-agent": ["../../fuzzy-agent/src/index.ts"],
+			"@fuzzyos/fuzzy-ai": ["../../fuzzy-ai/src/index.ts"],
+			"@fuzzyos/fuzzy-tui": ["../../fuzzy-tui/src/index.ts"],
+			"@fuzzyos/fuzzy-web-ui": ["../src/index.ts"]
+		},
+		"strict": true,
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"experimentalDecorators": true,
+		"useDefineForClassFields": false
+	},
+	"include": ["src/**/*"],
+	"exclude": ["../src"]
+}

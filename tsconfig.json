@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "paths": {
+      "@fuzzyos/fuzzy-ai": ["../fuzzy-ai/src/index.ts"],
+      "@fuzzyos/fuzzy-ai/*": ["../fuzzy-ai/src/*"],
+      "@fuzzyos/fuzzy-agent": ["../fuzzy-agent/src/index.ts"],
+      "@fuzzyos/fuzzy-agent/*": ["../fuzzy-agent/src/*"],
+      "@fuzzyos/fuzzy-tui": ["../fuzzy-tui/src/index.ts"],
+      "@fuzzyos/fuzzy-tui/*": ["../fuzzy-tui/src/*"]
+    }
+  },
+  "include": ["src/**/*"]
+}
