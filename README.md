@@ -97,7 +97,7 @@ document.body.appendChild(chatPanel);
                           │
                           ▼
 ┌─────────────────────────────────────────────────────┐
-│              Agent (from fuzzy-agent)          │
+│              Agent (from fuzzy-agent)               │
 │  - State management (messages, model, tools)        │
 │  - Event emission (agent_start, message_update, ...)│
 │  - Tool execution                                   │
