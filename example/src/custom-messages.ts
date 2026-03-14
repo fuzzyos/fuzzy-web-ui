@@ -1,7 +1,7 @@
 import type { Message } from "@fuzzyos/fuzzy-ai";
 import type { AgentMessage, MessageRenderer } from "@fuzzyos/fuzzy-web-ui";
 import { defaultConvertToLlm, registerMessageRenderer } from "@fuzzyos/fuzzy-web-ui";
-import { Alert } from "@mariozechner/mini-lit/dist/Alert.js";
+import { Alert } from "@fuzzyos/mini-lit/dist/Alert.js";
 import { html } from "lit";
 
 // ============================================================================

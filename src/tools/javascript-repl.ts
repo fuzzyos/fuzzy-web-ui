@@ -1,6 +1,6 @@
 import type { AgentTool } from "@fuzzyos/fuzzy-agent";
 import type { ToolResultMessage } from "@fuzzyos/fuzzy-ai";
-import { i18n } from "@mariozechner/mini-lit";
+import { i18n } from "@fuzzyos/mini-lit";
 import { type Static, Type } from "@sinclair/typebox";
 import { html } from "lit";
 import { createRef, ref } from "lit/directives/ref.js";

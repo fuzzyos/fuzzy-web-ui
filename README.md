@@ -2,7 +2,7 @@
 
 Reusable web UI components for building AI chat interfaces powered by [@fuzzyos/fuzzy-ai](../ai) and [@fuzzyos/fuzzy-agent](../agent).
 
-Built with [mini-lit](https://github.com/mariozechner/mini-lit) web components and Tailwind CSS v4.
+Built with [mini-lit](https://github.com/fuzzyos/mini-lit) web components and Tailwind CSS v4.
 
 ## Features
 
@@ -88,7 +88,7 @@ document.body.appendChild(chatPanel);
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│                    ChatPanel                        │
+│                    ChatPanel                         │
 │  ┌─────────────────────┐  ┌─────────────────────┐   │
 │  │   AgentInterface    │  │   ArtifactsPanel    │   │
 │  │  (messages, input)  │  │  (HTML, SVG, MD)    │   │
@@ -97,19 +97,19 @@ document.body.appendChild(chatPanel);
                           │
                           ▼
 ┌─────────────────────────────────────────────────────┐
-│              Agent (from fuzzy-agent)               │
-│  - State management (messages, model, tools)        │
-│  - Event emission (agent_start, message_update, ...)│
-│  - Tool execution                                   │
+│              Agent (from fuzzy-agent-core)              │
+│  - State management (messages, model, tools)         │
+│  - Event emission (agent_start, message_update, ...) │
+│  - Tool execution                                    │
 └─────────────────────────────────────────────────────┘
                           │
                           ▼
 ┌─────────────────────────────────────────────────────┐
-│                   AppStorage                        │
-│  ┌──────────┐ ┌──────────┐ ┌──────────┐             │
-│  │ Settings │ │ Provider │ │ Sessions │             │
-│  │  Store   │ │Keys Store│ │  Store   │             │
-│  └──────────┘ └──────────┘ └──────────┘             │
+│                   AppStorage                         │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐            │
+│  │ Settings │ │ Provider │ │ Sessions │            │
+│  │  Store   │ │Keys Store│ │  Store   │            │
+│  └──────────┘ └──────────┘ └──────────┘            │
 │                     │                               │
 │              IndexedDBStorageBackend                │
 └─────────────────────────────────────────────────────┘
@@ -166,7 +166,7 @@ Properties:
 - `enableThinkingSelector`: Show thinking level selector (default: true)
 - `showThemeToggle`: Show theme toggle (default: false)
 
-### Agent (from fuzzy-agent)
+### Agent (from fuzzy-agent-core)
 
 ```typescript
 import { Agent } from '@fuzzyos/fuzzy-agent';
@@ -566,7 +566,7 @@ import '@fuzzyos/fuzzy-web-ui/app.css';
 Or use Tailwind with custom config:
 
 ```css
-@import '@mariozechner/mini-lit/themes/claude.css';
+@import '@fuzzyos/mini-lit/themes/claude.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

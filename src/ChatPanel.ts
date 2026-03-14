@@ -1,4 +1,4 @@
-import { Badge } from "@mariozechner/mini-lit/dist/Badge.js";
+import { Badge } from "@fuzzyos/mini-lit/dist/Badge.js";
 import { html, LitElement } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import "./components/AgentInterface.js";
@@ -14,7 +14,7 @@ import { i18n } from "./utils/i18n.js";
 
 const BREAKPOINT = 800; // px - switch between overlay and side-by-side
 
-@customElement("fuzzy-chat-panel")
+@customElement("pi-chat-panel")
 export class ChatPanel extends LitElement {
 	@state() public agent?: Agent;
 	@state() public agentInterface?: AgentInterface;

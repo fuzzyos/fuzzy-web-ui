@@ -1,14 +1,14 @@
-import "@mariozechner/mini-lit/dist/CodeBlock.js";
+import "@fuzzyos/mini-lit/dist/CodeBlock.js";
 import type { ToolResultMessage } from "@fuzzyos/fuzzy-ai";
 import { createRef, ref } from "lit/directives/ref.js";
 import { FileCode2 } from "lucide";
 import "../../components/ConsoleBlock.js";
-import { Diff } from "@mariozechner/mini-lit/dist/Diff.js";
+import { Diff } from "@fuzzyos/mini-lit/dist/Diff.js";
 import { html, type TemplateResult } from "lit";
 import { i18n } from "../../utils/i18n.js";
 import { renderCollapsibleHeader, renderHeader } from "../renderer-registry.js";
 import type { ToolRenderer, ToolRenderResult } from "../types.js";
-import { ArtifactFuzzyll } from "./ArtifactPill.js";
+import { ArtifactPill } from "./ArtifactPill.js";
 import type { ArtifactsPanel, ArtifactsParams } from "./artifacts.js";
 
 // Helper to extract text from content blocks
@@ -87,9 +87,9 @@ export class ArtifactsToolRenderer implements ToolRenderer<ArtifactsParams, unde
 		};
 
 		// Helper to render header text with inline artifact pill
-		const renderHeaderWithFuzzyll = (labelText: string, filename?: string): TemplateResult => {
+		const renderHeaderWithPill = (labelText: string, filename?: string): TemplateResult => {
 			if (filename) {
-				return html`<span>${labelText} ${ArtifactFuzzyll(filename, this.artifactsPanel)}</span>`;
+				return html`<span>${labelText} ${ArtifactPill(filename, this.artifactsPanel)}</span>`;
 			}
 			return html`<span>${labelText}</span>`;
 		};
@@ -116,7 +116,7 @@ export class ArtifactsToolRenderer implements ToolRenderer<ArtifactsParams, unde
 				return {
 					content: html`
 					<div>
-						${renderCollapsibleHeader(state, FileCode2, renderHeaderWithFuzzyll(headerText, filename), contentRef, chevronRef, false)}
+						${renderCollapsibleHeader(state, FileCode2, renderHeaderWithPill(headerText, filename), contentRef, chevronRef, false)}
 						<div ${ref(contentRef)} class="max-h-0 overflow-hidden transition-all duration-300 space-y-3">
 							${isDiff ? diffContent : content ? html`<code-block .code=${content} language=${getLanguageFromFilename(filename)}></code-block>` : ""}
 							${
@@ -157,7 +157,7 @@ export class ArtifactsToolRenderer implements ToolRenderer<ArtifactsParams, unde
 				return {
 					content: html`
 					<div>
-						${renderCollapsibleHeader(state, FileCode2, renderHeaderWithFuzzyll(headerText, filename), contentRef, chevronRef, false)}
+						${renderCollapsibleHeader(state, FileCode2, renderHeaderWithPill(headerText, filename), contentRef, chevronRef, false)}
 						<div ${ref(contentRef)} class="max-h-0 overflow-hidden transition-all duration-300">
 							<code-block .code=${fileContent} language=${getLanguageFromFilename(filename)}></code-block>
 						</div>
@@ -173,7 +173,7 @@ export class ArtifactsToolRenderer implements ToolRenderer<ArtifactsParams, unde
 				return {
 					content: html`
 					<div>
-						${renderCollapsibleHeader(state, FileCode2, renderHeaderWithFuzzyll(headerText, filename), contentRef, chevronRef, false)}
+						${renderCollapsibleHeader(state, FileCode2, renderHeaderWithPill(headerText, filename), contentRef, chevronRef, false)}
 						<div ${ref(contentRef)} class="max-h-0 overflow-hidden transition-all duration-300">
 							<console-block .content=${logs}></console-block>
 						</div>
@@ -192,7 +192,7 @@ export class ArtifactsToolRenderer implements ToolRenderer<ArtifactsParams, unde
 				return {
 					content: html`
 					<div>
-						${renderCollapsibleHeader(state, FileCode2, renderHeaderWithFuzzyll(headerText, filename), contentRef, chevronRef, false)}
+						${renderCollapsibleHeader(state, FileCode2, renderHeaderWithPill(headerText, filename), contentRef, chevronRef, false)}
 						<div ${ref(contentRef)} class="max-h-0 overflow-hidden transition-all duration-300 space-y-3">
 							${codeContent ? html`<code-block .code=${codeContent} language=${getLanguageFromFilename(filename)}></code-block>` : ""}
 							${isHtml && logs ? html`<console-block .content=${logs}></console-block>` : ""}
@@ -209,7 +209,7 @@ export class ArtifactsToolRenderer implements ToolRenderer<ArtifactsParams, unde
 				return {
 					content: html`
 					<div>
-						${renderCollapsibleHeader(state, FileCode2, renderHeaderWithFuzzyll(headerText, filename), contentRef, chevronRef, false)}
+						${renderCollapsibleHeader(state, FileCode2, renderHeaderWithPill(headerText, filename), contentRef, chevronRef, false)}
 						<div ${ref(contentRef)} class="max-h-0 overflow-hidden transition-all duration-300 space-y-3">
 							${Diff({ oldText: params.old_str || "", newText: params.new_str || "" })}
 							${isHtml && logs ? html`<console-block .content=${logs}></console-block>` : ""}
@@ -224,7 +224,7 @@ export class ArtifactsToolRenderer implements ToolRenderer<ArtifactsParams, unde
 			return {
 				content: html`
 				<div class="space-y-3">
-					${renderHeader(state, FileCode2, renderHeaderWithFuzzyll(headerText, filename))}
+					${renderHeader(state, FileCode2, renderHeaderWithPill(headerText, filename))}
 				</div>
 			`,
 				isCustom: false,
@@ -250,7 +250,7 @@ export class ArtifactsToolRenderer implements ToolRenderer<ArtifactsParams, unde
 					return {
 						content: html`
 						<div>
-							${renderCollapsibleHeader(state, FileCode2, renderHeaderWithFuzzyll(headerText, filename), contentRef, chevronRef, false)}
+							${renderCollapsibleHeader(state, FileCode2, renderHeaderWithPill(headerText, filename), contentRef, chevronRef, false)}
 							<div ${ref(contentRef)} class="max-h-0 overflow-hidden transition-all duration-300">
 								${
 									content
@@ -267,7 +267,7 @@ export class ArtifactsToolRenderer implements ToolRenderer<ArtifactsParams, unde
 					return {
 						content: html`
 						<div>
-							${renderCollapsibleHeader(state, FileCode2, renderHeaderWithFuzzyll(headerText, filename), contentRef, chevronRef, false)}
+							${renderCollapsibleHeader(state, FileCode2, renderHeaderWithPill(headerText, filename), contentRef, chevronRef, false)}
 							<div ${ref(contentRef)} class="max-h-0 overflow-hidden transition-all duration-300">
 								${
 									old_str !== undefined && new_str !== undefined
@@ -285,7 +285,7 @@ export class ArtifactsToolRenderer implements ToolRenderer<ArtifactsParams, unde
 					return {
 						content: html`
 						<div>
-							${renderCollapsibleHeader(state, FileCode2, renderHeaderWithFuzzyll(headerText, filename), contentRef, chevronRef, false)}
+							${renderCollapsibleHeader(state, FileCode2, renderHeaderWithPill(headerText, filename), contentRef, chevronRef, false)}
 							<div ${ref(contentRef)} class="max-h-0 overflow-hidden transition-all duration-300"></div>
 						</div>
 					`,
@@ -296,7 +296,7 @@ export class ArtifactsToolRenderer implements ToolRenderer<ArtifactsParams, unde
 					return {
 						content: html`
 						<div>
-							${renderHeader(state, FileCode2, renderHeaderWithFuzzyll(headerText, filename))}
+							${renderHeader(state, FileCode2, renderHeaderWithPill(headerText, filename))}
 						</div>
 					`,
 						isCustom: false,

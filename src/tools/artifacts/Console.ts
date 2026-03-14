@@ -1,5 +1,5 @@
-import { icon } from "@mariozechner/mini-lit";
-import "@mariozechner/mini-lit/dist/CopyButton.js";
+import { icon } from "@fuzzyos/mini-lit";
+import "@fuzzyos/mini-lit/dist/CopyButton.js";
 import { html, LitElement, type TemplateResult } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { createRef, type Ref, ref } from "lit/directives/ref.js";
@@ -20,7 +20,7 @@ export class Console extends LitElement {
 	private logsContainerRef: Ref<HTMLDivElement> = createRef();
 
 	protected createRenderRoot() {
-		return this; // light DOM
+		return this; // light DOMClear the thinkingSignature
 	}
 
 	override updated() {

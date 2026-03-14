@@ -1,4 +1,4 @@
-import "@mariozechner/mini-lit/dist/ThemeToggle.js";
+import "@fuzzyos/mini-lit/dist/ThemeToggle.js";
 import { Agent, type AgentMessage } from "@fuzzyos/fuzzy-agent";
 import { getModel } from "@fuzzyos/fuzzy-ai";
 import {
@@ -22,9 +22,9 @@ import {
 import { html, render } from "lit";
 import { Bell, History, Plus, Settings } from "lucide";
 import "./app.css";
-import { icon } from "@mariozechner/mini-lit";
-import { Button } from "@mariozechner/mini-lit/dist/Button.js";
-import { Input } from "@mariozechner/mini-lit/dist/Input.js";
+import { icon } from "@fuzzyos/mini-lit";
+import { Button } from "@fuzzyos/mini-lit/dist/Button.js";
+import { Input } from "@fuzzyos/mini-lit/dist/Input.js";
 import { createSystemNotification, customConvertToLlm, registerCustomMessageRenderers } from "./custom-messages.js";
 
 // Register custom message renderers

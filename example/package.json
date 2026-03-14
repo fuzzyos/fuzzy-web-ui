@@ -1,6 +1,6 @@
 {
   "name": "fuzzy-web-ui-example",
-  "version": "1.0.1",
+  "version": "1.46.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -11,7 +11,7 @@
     "clean": "shx rm -rf dist"
   },
   "dependencies": {
-    "@mariozechner/mini-lit": "^0.2.0",
+    "@fuzzyos/mini-lit": "^0.2.0",
     "@fuzzyos/fuzzy-ai": "file:../../ai",
     "@fuzzyos/fuzzy-web-ui": "file:../",
     "@tailwindcss/vite": "^4.1.17",

@@ -1,9 +1,9 @@
-import { icon } from "@mariozechner/mini-lit";
+import { icon } from "@fuzzyos/mini-lit";
 import { html, type TemplateResult } from "lit";
 import { FileCode2 } from "lucide";
 import type { ArtifactsPanel } from "./artifacts.js";
 
-export function ArtifactFuzzyll(filename: string, artifactsPanel?: ArtifactsPanel): TemplateResult {
+export function ArtifactPill(filename: string, artifactsPanel?: ArtifactsPanel): TemplateResult {
 	const handleClick = (e: Event) => {
 		if (!artifactsPanel) return;
 		e.preventDefault();

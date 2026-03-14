@@ -1,6 +1,6 @@
 import { getProviders } from "@fuzzyos/fuzzy-ai";
-import { i18n } from "@mariozechner/mini-lit";
-import { Select } from "@mariozechner/mini-lit/dist/Select.js";
+import { i18n } from "@fuzzyos/mini-lit";
+import { Select } from "@fuzzyos/mini-lit/dist/Select.js";
 import { html, type TemplateResult } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import "../components/CustomProviderCard.js";
