@@ -1,7 +1,7 @@
+import { Alert } from "@fuzzyos/mini-lit/dist/Alert.js";
 import type { Message } from "@fuzzyos/fuzzy-ai";
 import type { AgentMessage, MessageRenderer } from "@fuzzyos/fuzzy-web-ui";
 import { defaultConvertToLlm, registerMessageRenderer } from "@fuzzyos/fuzzy-web-ui";
-import { Alert } from "@fuzzyos/mini-lit/dist/Alert.js";
 import { html } from "lit";
 
 // ============================================================================
@@ -17,7 +17,7 @@ export interface SystemNotificationMessage {
 }
 
 // Extend CustomAgentMessages interface via declaration merging
-// This must target fuzzy-agent where CustomAgentMessages is defined
+// This must target fuzzy-agent-core where CustomAgentMessages is defined
 declare module "@fuzzyos/fuzzy-agent" {
 	interface CustomAgentMessages {
 		"system-notification": SystemNotificationMessage;

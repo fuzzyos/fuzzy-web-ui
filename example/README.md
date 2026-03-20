@@ -57,5 +57,5 @@ example/
 ## Learn More
 
 - [Fuzzy Web UI Documentation](../README.md)
-- [Fuzzy AI Documentation](../../fuzzy-ai/README.md)
+- [Fuzzy AI Documentation](../../ai/README.md)
 - [Mini Lit Documentation](https://github.com/fuzzyos/mini-lit)

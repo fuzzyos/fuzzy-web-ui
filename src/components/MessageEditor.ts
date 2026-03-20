@@ -1,7 +1,7 @@
-import type { Model } from "@fuzzyos/fuzzy-ai";
 import { icon } from "@fuzzyos/mini-lit";
 import { Button } from "@fuzzyos/mini-lit/dist/Button.js";
 import { Select, type SelectOption } from "@fuzzyos/mini-lit/dist/Select.js";
+import type { Model } from "@fuzzyos/fuzzy-ai";
 import { html, LitElement } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { createRef, ref } from "lit/directives/ref.js";
@@ -333,7 +333,9 @@ export class MessageEditor extends LitElement {
 											{ value: "high", label: i18n("High"), icon: icon(Brain, "sm") },
 										] as SelectOption[],
 										onChange: (value: string) => {
-											this.onThinkingChange?.(value as "off" | "minimal" | "low" | "medium" | "high");
+											const level = value as "off" | "minimal" | "low" | "medium" | "high";
+											this.thinkingLevel = level;
+											this.onThinkingChange?.(level);
 										},
 										width: "80px",
 										size: "sm",

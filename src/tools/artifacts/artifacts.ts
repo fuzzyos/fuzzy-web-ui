@@ -1,8 +1,8 @@
 import { icon } from "@fuzzyos/mini-lit";
 import "@fuzzyos/mini-lit/dist/MarkdownBlock.js";
+import { Button } from "@fuzzyos/mini-lit/dist/Button.js";
 import type { Agent, AgentMessage, AgentTool } from "@fuzzyos/fuzzy-agent";
 import { StringEnum, type ToolCall } from "@fuzzyos/fuzzy-ai";
-import { Button } from "@fuzzyos/mini-lit/dist/Button.js";
 import { type Static, Type } from "@sinclair/typebox";
 import { html, LitElement, type TemplateResult } from "lit";
 import { customElement, property, state } from "lit/decorators.js";

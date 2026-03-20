@@ -20,7 +20,7 @@ export class Console extends LitElement {
 	private logsContainerRef: Ref<HTMLDivElement> = createRef();
 
 	protected createRenderRoot() {
-		return this; // light DOMClear the thinkingSignature
+		return this; // light DOM
 	}
 
 	override updated() {

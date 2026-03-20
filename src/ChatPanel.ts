@@ -14,7 +14,7 @@ import { i18n } from "./utils/i18n.js";
 
 const BREAKPOINT = 800; // px - switch between overlay and side-by-side
 
-@customElement("pi-chat-panel")
+@customElement("fuzzy-chat-panel")
 export class ChatPanel extends LitElement {
 	@state() public agent?: Agent;
 	@state() public agentInterface?: AgentInterface;
@@ -59,6 +59,7 @@ export class ChatPanel extends LitElement {
 			onApiKeyRequired?: (provider: string) => Promise<boolean>;
 			onBeforeSend?: () => void | Promise<void>;
 			onCostClick?: () => void;
+			onModelSelect?: () => void;
 			sandboxUrlProvider?: () => string;
 			toolsFactory?: (
 				agent: Agent,
@@ -78,6 +79,7 @@ export class ChatPanel extends LitElement {
 		this.agentInterface.enableThinkingSelector = true;
 		this.agentInterface.showThemeToggle = false;
 		this.agentInterface.onApiKeyRequired = config?.onApiKeyRequired;
+		this.agentInterface.onModelSelect = config?.onModelSelect;
 		this.agentInterface.onBeforeSend = config?.onBeforeSend;
 		this.agentInterface.onCostClick = config?.onCostClick;
 
