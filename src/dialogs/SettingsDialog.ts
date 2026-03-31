@@ -1,9 +1,9 @@
+import { getProviders } from "@fuzzyos/fuzzy-ai";
 import { i18n } from "@fuzzyos/mini-lit";
 import { Dialog, DialogContent, DialogHeader } from "@fuzzyos/mini-lit/dist/Dialog.js";
 import { Input } from "@fuzzyos/mini-lit/dist/Input.js";
 import { Label } from "@fuzzyos/mini-lit/dist/Label.js";
 import { Switch } from "@fuzzyos/mini-lit/dist/Switch.js";
-import { getProviders } from "@fuzzyos/fuzzy-ai";
 import { html, LitElement, type TemplateResult } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import "../components/ProviderKeyInput.js";
