@@ -13,7 +13,6 @@ import {
 	ProviderKeysStore,
 	ProvidersModelsTab,
 	ProxyTab,
-	type SandboxRuntimeProvider,
 	SessionListDialog,
 	SessionsStore,
 	SettingsDialog,
@@ -207,12 +206,7 @@ Feel free to use these tools when needed to provide accurate and helpful respons
 		onApiKeyRequired: async (provider: string) => {
 			return await ApiKeyPromptDialog.prompt(provider);
 		},
-		toolsFactory: (
-			_agent,
-			_agentInterface,
-			_artifactsPanel,
-			runtimeProvidersFactory: () => SandboxRuntimeProvider[],
-		) => {
+		toolsFactory: (_agent, _agentInterface, _artifactsPanel, runtimeProvidersFactory) => {
 			// Create javascript_repl tool with access to attachments + artifacts
 			const replTool = createJavaScriptReplTool();
 			replTool.runtimeProvidersFactory = runtimeProvidersFactory;
@@ -270,10 +264,10 @@ const renderApp = () => {
 						children: icon(History, "sm"),
 						onClick: () => {
 							SessionListDialog.open(
-								async (sessionId: string) => {
+								async (sessionId) => {
 									await loadSession(sessionId);
 								},
-								(deletedSessionId: string) => {
+								(deletedSessionId) => {
 									// Only reload if the current session was deleted
 									if (deletedSessionId === currentSessionId) {
 										newSession();
