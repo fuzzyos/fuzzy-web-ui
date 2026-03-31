@@ -1,10 +1,10 @@
-import type { Model } from "@fuzzyos/fuzzy-ai";
 import { i18n } from "@fuzzyos/mini-lit";
 import { Button } from "@fuzzyos/mini-lit/dist/Button.js";
 import { DialogBase } from "@fuzzyos/mini-lit/dist/DialogBase.js";
 import { Input } from "@fuzzyos/mini-lit/dist/Input.js";
 import { Label } from "@fuzzyos/mini-lit/dist/Label.js";
 import { Select } from "@fuzzyos/mini-lit/dist/Select.js";
+import type { Model } from "@fuzzyos/fuzzy-ai";
 import { html, type TemplateResult } from "lit";
 import { state } from "lit/decorators.js";
 import { getAppStorage } from "../storage/app-storage.js";

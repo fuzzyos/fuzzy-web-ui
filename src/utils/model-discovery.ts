@@ -1,5 +1,5 @@
-import type { Model } from "@fuzzyos/fuzzy-ai";
 import { LMStudioClient } from "@lmstudio/sdk";
+import type { Model } from "@fuzzyos/fuzzy-ai";
 import { Ollama } from "ollama/browser";
 
 /**
