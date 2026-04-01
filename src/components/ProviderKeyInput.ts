@@ -1,7 +1,7 @@
-import { type Context, complete, getModel } from "@fuzzyos/fuzzy-ai";
 import { i18n } from "@fuzzyos/mini-lit";
 import { Badge } from "@fuzzyos/mini-lit/dist/Badge.js";
 import { Button } from "@fuzzyos/mini-lit/dist/Button.js";
+import { type Context, complete, getModel } from "@fuzzyos/fuzzy-ai";
 import { html, LitElement } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { getAppStorage } from "../storage/app-storage.js";
