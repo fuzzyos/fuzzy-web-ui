@@ -1,5 +1,5 @@
-import type { Usage } from "@fuzzyos/fuzzy-ai";
 import { i18n } from "@fuzzyos/mini-lit";
+import type { Usage } from "@fuzzyos/fuzzy-ai";
 
 export function formatCost(cost: number): string {
 	return `$${cost.toFixed(4)}`;

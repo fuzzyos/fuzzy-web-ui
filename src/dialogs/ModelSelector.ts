@@ -1,9 +1,9 @@
-import { getModels, getProviders, type Model, modelsAreEqual } from "@fuzzyos/fuzzy-ai";
 import { icon } from "@fuzzyos/mini-lit";
 import { Badge } from "@fuzzyos/mini-lit/dist/Badge.js";
 import { Button } from "@fuzzyos/mini-lit/dist/Button.js";
 import { DialogHeader } from "@fuzzyos/mini-lit/dist/Dialog.js";
 import { DialogBase } from "@fuzzyos/mini-lit/dist/DialogBase.js";
+import { getModels, getProviders, type Model, modelsAreEqual } from "@fuzzyos/fuzzy-ai";
 import { html, type PropertyValues, type TemplateResult } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import { createRef, ref } from "lit/directives/ref.js";
@@ -113,6 +113,9 @@ export class ModelSelector extends DialogBase {
 
 		// Add global keyboard handler for the dialog
 		this.addEventListener("keydown", (e: KeyboardEvent) => {
+			// Ignore key events during IME composition (e.g. CJK input)
+			if (e.isComposing || e.key === "Process") return;
+
 			// Get filtered models to know the bounds
 			const filteredModels = this.getFilteredModels();
 
