@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@lmstudio/sdk": "^1.5.0",
-    "@fuzzyos/fuzzy-ai": "0.4.0",
+    "@fuzzyos/fuzzy-ai": "0.4.1",
     "@fuzzyos/fuzzy-tui": "0.4.0",
     "docx-preview": "^0.3.7",
     "jszip": "^3.10.1",
